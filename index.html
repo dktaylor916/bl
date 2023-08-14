@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Mapbox GL Map</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script src="https://api.mapbox.com/mapbox-gl-js/v2.15.0/mapbox-gl.js"></script>
+  <link href="https://api.mapbox.com/mapbox-gl-js/v2.15.0/mapbox-gl.css" rel="stylesheet">
+
+  <link href="https://fonts.cdnfonts.com/css/strawford" rel="stylesheet">
+  
+  <style>
+    
+    #map { position: absolute; top: 0; bottom: 0; width: 100%; }
+    #legend {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      background-color: rgba(255, 255, 255, 0.6);
+      border-radius: 4px;
+      padding: 5px;
+    }
+
+    .legend-item {
+      display: flex;
+      align-items: center;
+      margin-bottom: 5px;
+      font-family: 'Futura', sans-serif;
+    }
+
+    .legend-color {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      margin-right: 5px;
+    }
+
+    .good {
+      background-color: hsl(131, 100%, 52%);
+    }
+
+    .poor {
+      background-color: hsl(0, 100%, 55%)
+    }
+  </style>
+</head>
+<body>
+  <div id="map"></div>
+  <div id="legend">
+    <div class="legend-item">
+      <div class="legend-color good"></div>
+      <span>Good</span>
+    </div>
+    <div class="legend-item">
+      <div class="legend-color poor"></div>
+      <span>Poor</span>
+    </div>
+  <script>
+    // Set your Mapbox access token here
+    mapboxgl.accessToken = 'pk.eyJ1IjoiZGt0YXlidyIsImEiOiJjbDlkenBvODMwa2twM3hvZ293bWVpaml1In0._QB63ZC3km-uev6mJkmacg';
+
+    // Initialize the map
+    const map = new mapboxgl.Map({
+      container: 'map',
+      style: 'mapbox://styles/dktaybw/cllbgamet00sl01ph6nqy9bdp', // Style URL provided 51.506357,-0.124453
+      center: [-0.124453, 51.506357], // Example center coordinates (longitude, latitude)
+      zoom: 12, // Example zoom level
+      maxBounds: [
+    [-0.3, 51.4],   // Southwest coordinates of the bounding box
+    [0.3, 51.6]     // Northeast coordinates of the bounding box
+  ]
+    });
+     // Set your Mapbox access token here
+   
+  </script>
+</body>
+</html>
